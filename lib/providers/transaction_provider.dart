@@ -28,8 +28,7 @@ class TransactionProvider with ChangeNotifier {
   int returnTransColorIndecator = 0;
   List<Transaction> ordersToPrint;
   List<Transaction> returnsToPrint;
-  bool printingOrdersDataArrived = false;
-  bool printingReturnsDataArrived = false;
+
   void incrementOrders() {
     orderTransColorIndecator++;
     notifyListeners();
@@ -172,14 +171,14 @@ class TransactionProvider with ChangeNotifier {
         queryParameters: <String, dynamic>{
           "beneficiary_id": benId
         }).then((Response<dynamic> response1) {
-      printingOrdersDataArrived = true;
+
       ordersToPrint = Transactions.fromJson(response1.data).transactions;
     });
     dio.get<dynamic>("daily_return_transactions",
         queryParameters: <String, dynamic>{
           "beneficiary_id": benId
         }).then((Response<dynamic> response2) {
-      printingReturnsDataArrived = true;
+  
       returnsToPrint = Transactions.fromJson(response2.data).transactions;
     });
   }

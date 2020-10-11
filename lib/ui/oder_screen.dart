@@ -95,7 +95,7 @@ class _OrderScreenState extends State<OrderScreen> {
               width: 60,
               height: 40,
               imageUrl: (item.image != "null")
-                  ? "http://sahrawy.agentsmanage.com/image/${item.image}"
+                  ? "http://sahary.agentsmanage.com/image/${item.image}"
                   : "",
               progressIndicatorBuilder: (BuildContext context, String url,
                       DownloadProgress downloadProgress) =>
@@ -514,7 +514,7 @@ class _OrderScreenState extends State<OrderScreen> {
                         child: CachedNetworkImage(
                           fit: BoxFit.cover,
                           imageUrl: (item.image != "null")
-                              ? "http://sahrawy.agentsmanage.com/image/${item.image}"
+                              ? "http://sahary.agentsmanage.com/image/${item.image}"
                               : "",
                           errorWidget: (BuildContext c, String a, dynamic d) {
                             return Container();
